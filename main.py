@@ -5,7 +5,7 @@ import pyautogui as pt
 from selenium import webdriver
 
 
-driver = webdriver.Chrome('C:/Program Files (x86)/Google/new/chromedriver.exe')
+driver = webdriver.Chrome(CHROMEDRIVER_PATH)
 driver.get('https://web.whatsapp.com/')
 # time.sleep(30)
 while True:
