@@ -4,8 +4,16 @@ import os
 import pyautogui as pt
 from selenium import webdriver
 
+from selenium import webdriver
+import os
 
-driver = webdriver.Chrome(CHROMEDRIVER_PATH)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
 driver.get('https://web.whatsapp.com/')
 # time.sleep(30)
 while True:
